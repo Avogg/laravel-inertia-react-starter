@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -12,7 +15,10 @@
         "laravel/breeze": "^1.4",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
+        "laravel/spark-stripe": "^4.0",
         "laravel/tinker": "^2.8",
+        "livewire/livewire": "^2.12",
+        "rappasoft/laravel-livewire-tables": "^2.12",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
@@ -37,6 +43,12 @@
             "Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://spark.laravel.com"
+        }
+    ],
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

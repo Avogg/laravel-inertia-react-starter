@@ -33,15 +33,20 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
+
         return array_merge(parent::share($request), [
             'auth' => [
-                'user' => $request->user(),
+                'user' => auth()->user(),
+            ],
+            'subscription' => [
+                'onTrial' => auth()->user()?->onTrial(),
             ],
             'flash' => function () use ($request) {
                 return [
                     'success' => $request->session()->get('success'),
                 ];
             },
+            'asset' => asset(''),
             'showingMobileMenu' => false,
             'logo' => asset('images/logo-min.png')
         ]);

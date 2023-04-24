@@ -3,8 +3,10 @@
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\PsyquenceController;
+use App\Http\Controllers\WrongWordController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -36,4 +38,16 @@ Route::group(['prefix' => 'admins', 'middleware' => 'auth'], function () {
     Route::put('/users/{user}/edit', [UserController::class, 'update'])->name('admins.users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('admins.users.destroy');
     Route::get('/users/get', [UserController::class, 'getUsers'])->name('admins.users.getusers');
+});
+
+
+Route::group(['middleware' => ['auth', 'subscribed']], function () {
+    Route::get('/psyquence/templates', [PsyquenceController::class, 'indexTemplates'])->name('doctors.psyquence.templates');
+    Route::get('/psyquence/templates/create', [PsyquenceController::class, 'createTemplates'])->name('doctors.psyquence.templates.create');
+    Route::get('/psyquence/templates/{id}', [PsyquenceController::class, 'showTemplates'])->name('doctors.psyquence.templates.show');
+    Route::get('/wrongword', [WrongWordController::class, 'index'])->name('doctors.wrongword.show');
+
+    Route::get('/psyquence/create', [PsyquenceController::class, 'create'])->name('doctors.psyquence.create');
+    Route::get('/psyquence', [PsyquenceController::class, 'index'])->name('doctors.psyquence.index');
+    Route::get('/psyquence/{psyquenceGame}', [PsyquenceController::class, 'show'])->name('doctors.psyquence.show');
 });
