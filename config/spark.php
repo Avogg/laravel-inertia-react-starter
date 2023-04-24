@@ -140,8 +140,8 @@ return [
                 [
                     'name' => 'Aprender Digital',
                     'short_description' => 'Inclui todos os recursos da plataforma.',
-                    'monthly_id' => 'price_1N00Z3HC0MJqXFjNJxg1Kuh5',
-                    'yearly_id' => 'price_1N00Z3HC0MJqXFjNlF8h7nEo',
+                    'monthly_id' => 'price_1N0L0cHC0MJqXFjNKKF9rhg0',
+                    'yearly_id' => 'price_1N0L0cHC0MJqXFjNmICiCroE',
                     'features' => [
                         'Psyquence',
                         'Fala por mim',
