@@ -56,8 +56,6 @@
                 <li>Psyquence</li>
                 <li><a href="{{ route('doctors.psyquence.templates') }}" class="{{request()->routeIs('doctors.psyquence.templates') ? 'active' : ''}}"><x-feathericon-archive />Psyquence Templates</a></li>
                 <li><a href="{{ route('doctors.psyquence.index') }}" class="{{request()->routeIs('doctors.psyquence.*') ? 'active' : ''}}"><x-feathericon-grid />Sessões Psyquence</a></li>
-                <li>Palavra Errada</li>
-                <li><a href="{{ route('doctors.wrongword.show') }}" class="{{request()->routeIs('doctors.wrongword.*') ? 'active' : ''}}"><x-feathericon-x />Palavra Errada</a></li>
 
             </ul>
 
