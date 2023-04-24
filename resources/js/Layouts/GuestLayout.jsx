@@ -3,19 +3,11 @@ import { Link, router, usePage } from "@inertiajs/react";
 import { User } from "react-feather";
 
 export default function Guest({ children }) {
-    const { logo, auth, subscription } = usePage().props;
+    const { logo, auth } = usePage().props;
 
     return (
         <div className="flex h-screen bg-gray-50">
             <div className="flex flex-col flex-1 w-full">
-                {subscription.onTrial && (
-                    <div className="w-full h-12 bg-primary flex items-center justify-center text-white">
-                        Está a usufruir da versão de apresentação.{" "}
-                        <a href="/billing" className="underline">
-                            Compre aqui o plano premium
-                        </a>
-                    </div>
-                )}
                 <div>
                     <div className="px-4 md:px-24 w-screen bg-white border-gray-200  h-20 flex items-center justify-between ">
                         <div className="flex space-x-5 items-center justify-center">
@@ -36,7 +28,6 @@ export default function Guest({ children }) {
                             >
                                 Início
                             </Link>
-
                             {auth.user?.is_admin === 1 && (
                                 <Link className="btn btn-ghost" href="/admins">
                                     Área de Administração
@@ -55,11 +46,6 @@ export default function Guest({ children }) {
                                         tabIndex={0}
                                         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                                     >
-                                        <li>
-                                            <Link href="/billing">
-                                                Pagamentos
-                                            </Link>
-                                        </li>
                                         <li>
                                             <Link href="/auth/logout">
                                                 Logout

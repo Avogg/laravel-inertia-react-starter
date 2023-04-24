@@ -25,15 +25,6 @@ function Users({user}) {
             [key]: value,
         }))
       }
-
-      function handleChangeFile(e) {
-        const key = e.target.id;
-        const value = e.target.files[0];
-        setValues((values) => ({
-            ...values,
-            [key]: value,
-        }));
-    }
       function handleChangeChecked(e) {
         const key = e.target.id;
         const value = e.target.checked;
