@@ -1,7 +1,7 @@
 import { Link, router, usePage } from "@inertiajs/react";
 import { ChevronDown, Plus } from "react-feather";
 
-export default function AdminLayout({ children, header, create }) {
+export default function AdminLayout({ children, header, create, optionalButtons }) {
     const { logo, auth } = usePage().props;
     const component = usePage().component;
     return (
@@ -59,6 +59,13 @@ export default function AdminLayout({ children, header, create }) {
                                     <Plus /> Criar
                                 </a>
                             )}
+                            {
+                                optionalButtons && (
+                                    optionalButtons.map((optionalButton, key) => {
+                                        return <Link href={optionalButton.link} key={key} as="button" className="btn btn-outline btn-primary">{optionalButton.text}</Link>
+                                    })
+                                )
+                            }
                         </div>
 
                         <div>{children}</div>
