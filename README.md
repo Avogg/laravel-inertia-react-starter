@@ -20,6 +20,7 @@ This starter kit provides a solid foundation for building web applications using
 
 - **User Management:** The starter kit also includes user management features, allowing you to create, update, and delete user accounts. You can easily customize and extend these features to suit your application's needs. User management is an essential component of many applications, and this starter kit provides a solid foundation to get you started.
 
+- **Laravel pint:** Laravel Inertia React Starter has Laravel Pint out of the box so you don't have to worry about fixing minor code inconsistences. 
 
 ## Installation
 
