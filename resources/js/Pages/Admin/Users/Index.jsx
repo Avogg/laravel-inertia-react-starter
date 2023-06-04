@@ -1,10 +1,7 @@
 import Table from "@/Components/Table/Table";
 import AdminLayout from "@/Layouts/AdminLayout";
-import Pagination from "@/Components/Shared/Pagination";
-import { Link, router, useRemember } from "@inertiajs/react";
-import { useEffect, useRef, useState } from "react";
-import DataTable from "react-data-table-component";
-import { ChevronLeft, ChevronRight } from "react-feather";
+import { Link, router } from "@inertiajs/react";
+import { useRef, useState } from "react";
 
 export default function UserIndex({ users }) {
     const [removeUser, setRemoveUser] = useState(null);
@@ -28,7 +25,7 @@ export default function UserIndex({ users }) {
         },
         {
             key: "name",
-            title: "Nome",
+            title: "Name",
             width: 100,
             sortable: true,
         },
@@ -40,17 +37,17 @@ export default function UserIndex({ users }) {
         },
         {
             key: "actions",
-            title: "Ações",
+            title: "Actions",
             width: 200,
             render: (column, item) => {
                 return (
                     <div className="flex gap-8">
-                        <a
+                        <Link
                             href={route("admins.users.edit", item)}
                             className="btn btn-sm btn-warning"
                         >
-                            Editar
-                        </a>
+                            Edit
+                        </Link>
                         <label
                             htmlFor="my-modal-4"
                             onClick={() => {
@@ -58,7 +55,7 @@ export default function UserIndex({ users }) {
                             }}
                             className="btn btn-sm btn-error"
                         >
-                            Remover
+                            Remove
                         </label>
                     </div>
                 );
@@ -68,7 +65,7 @@ export default function UserIndex({ users }) {
 
     return (
         <AdminLayout
-            header={"Utilizadores"}
+            header={"Users"}
             create={route("admins.users.create")}
         >
             <input
@@ -79,10 +76,10 @@ export default function UserIndex({ users }) {
             />
             <label htmlFor="my-modal-4" className="modal cursor-pointer">
                 <label className="modal-box relative" htmlFor="">
-                    <h3 className="text-lg font-bold">Remover utilizador</h3>
-                    <p className="py-4">Pretende remover este utilizador?</p>
+                    <h3 className="text-lg font-bold">Remove user</h3>
+                    <p className="py-4">Are you sure you want to remove this user?</p>
                     <button className="btn btn-error" onClick={deleteUser}>
-                        Remover
+                        Remove
                     </button>
                 </label>
             </label>
