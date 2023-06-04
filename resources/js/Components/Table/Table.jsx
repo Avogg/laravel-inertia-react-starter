@@ -47,7 +47,7 @@ function Table({ columns, data, route, pagination, actionLocation = null, action
         <div>
             <div className="form-control mb-5">
                 <div className="flex w-full items-center justify-between">
-                    { actionLocation ? <Link as="button" href={actionLocation} className="btn btn-primary text-white rounded-md">{actionMessage}</Link> : <div></div> }
+                    {actionLocation ? <Link as="button" href={actionLocation} className="btn btn-primary text-white rounded-md">{actionMessage}</Link> : <div></div>}
                     <div className="flex items-center">
                         <input
                             type="text"
