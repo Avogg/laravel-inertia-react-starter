@@ -11,14 +11,6 @@ module.exports = {
 
     darkMode: "class",
     theme: {
-        extend: {
-            colors: {
-                primary: "#354a97",
-                secondary: "#4B6BDF",
-                error: "#EF4444",
-                "almost-white": "#F9F9F9",
-            },
-        },
     },
 
     plugins: [
@@ -28,5 +20,29 @@ module.exports = {
     ],
     daisyui: {
         darkTheme: "winter",
+        themes: [
+            {
+                customTheme: {
+
+                    "primary": "#7f81f1",
+
+                    "secondary": "#38bdf8",
+
+                    "accent": "#1FB2A5",
+
+                    "neutral": "#191D24",
+
+                    "base-100": "#ffffff",
+
+                    "info": "#3ABFF8",
+
+                    "success": "#36D399",
+
+                    "warning": "#FBBD23",
+
+                    "error": "#F87272",
+                },
+            },
+        ],
     },
 };

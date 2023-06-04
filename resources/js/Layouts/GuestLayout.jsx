@@ -1,4 +1,4 @@
-import { Link, router, usePage } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 
 import { User } from "react-feather";
 
@@ -11,14 +11,14 @@ export default function Guest({ children }) {
                 <div>
                     <div className="px-4 md:px-24 w-screen bg-white border-gray-200  h-20 flex items-center justify-between ">
                         <div className="flex space-x-5 items-center justify-center">
-                            <a href={route("welcome")}>
+                            <Link href={route("welcome")}>
                                 <img
                                     src={logo}
                                     width="200"
                                     className="px-2 md:px-0 md:flex w-12"
                                     alt=""
                                 />
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="hidden md:flex space-x-5 items-center text-primary">
@@ -26,11 +26,11 @@ export default function Guest({ children }) {
                                 className="text-gray-700"
                                 href={route("welcome")}
                             >
-                                Início
+                                Home
                             </Link>
                             {auth.user?.is_admin === 1 && (
                                 <Link className="btn btn-ghost" href="/admins">
-                                    Área de Administração
+                                    Administration area
                                 </Link>
                             )}
 
@@ -59,7 +59,7 @@ export default function Guest({ children }) {
                                     >
                                         <li>
                                             <Link href="/auth/register">
-                                                Registar
+                                                Register
                                             </Link>
                                         </li>
                                         <li>

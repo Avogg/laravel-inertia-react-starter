@@ -1,8 +1,8 @@
 import Guest from '@/Layouts/GuestLayout';
-import { Link, Head, usePage, router } from '@inertiajs/react';
+import { usePage, router } from '@inertiajs/react';
 import { useState } from 'react';
 
-export default function Welcome(props) {
+export default function Register() {
     const { errors } = usePage().props
 
     const [values, setValues] = useState({
@@ -24,6 +24,7 @@ export default function Welcome(props) {
         e.preventDefault()
         router.post('/auth/store', values)
     }
+
     return (
         <Guest>
             <div className="w-full flex items-center justify-center">
