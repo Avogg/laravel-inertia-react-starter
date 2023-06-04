@@ -2,7 +2,7 @@ import Guest from '@/Layouts/GuestLayout';
 import { usePage, router } from '@inertiajs/react';
 import { useState } from 'react';
 
-export default function Welcome(props) {
+export default function Login() {
     const { errors } = usePage().props
 
     const [values, setValues] = useState({
