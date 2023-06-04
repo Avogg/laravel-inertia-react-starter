@@ -6,7 +6,7 @@ export default function AdminLayout({ children, header, create, optionalButtons 
     const component = usePage().component;
     return (
         <>
-            <div className="navbar bg-base-200">
+            <div className="navbar bg-base-100 shadow-sm border border-gray-100">
                 <div className="flex-1">
                     <Link
                         href="#"
@@ -28,9 +28,6 @@ export default function AdminLayout({ children, header, create, optionalButtons 
                             tabIndex="0"
                             className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                         >
-                            <li>
-                                <Link href="#">O meu perfil</Link>
-                            </li>
                             <li>
                                 <Link href="/auth/logout">Logout</Link>
                             </li>
@@ -56,7 +53,7 @@ export default function AdminLayout({ children, header, create, optionalButtons 
                                     href={create}
                                     className="btn btn-primary flex gap-4"
                                 >
-                                    <Plus /> Criar
+                                    <Plus /> Create
                                 </a>
                             )}
                             {
@@ -71,12 +68,12 @@ export default function AdminLayout({ children, header, create, optionalButtons 
                         <div>{children}</div>
                     </div>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side shadow-sm border border-gray-100">
                     <label
                         htmlFor="my-drawer-2"
                         className="drawer-overlay"
                     ></label>
-                    <ul className="menu p-4 w-80 bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
                         <li>
                             <a
                                 href="/admins"
@@ -91,20 +88,22 @@ export default function AdminLayout({ children, header, create, optionalButtons 
                         </li>
 
                         <li className="menu-title">
-                            <span>Metadados</span>
+                            <span>Items</span>
                         </li>
-                        <li>
-                            <a
-                                href="/admins/users"
-                                className={
-                                    component === "Admin/Users/Index"
-                                        ? "active"
-                                        : " "
-                                }
-                            >
-                                Utilizadores
-                            </a>
-                        </li>
+                        <div className="space-y-5">
+                            <li>
+                                <a
+                                    href="/admins/users"
+                                    className={
+                                        component === "Admin/Users/Index"
+                                            ? "active"
+                                            : " "
+                                    }
+                                >
+                                    Users
+                                </a>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>

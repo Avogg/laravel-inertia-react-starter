@@ -8,7 +8,7 @@ function Welcome() {
         <Guest>
             <div className="w-full flex flex-col justify-center text-center p-10 mt-10">
                 <p className="text-primary uppercase text-6xl font-bold">Welcome!</p>
-                <p className="mt-5">This is your <Link as="paragraph" href="https://inertiajs.com/" target="_blank" className="link link-primary">Laravel Intertia</Link> with React template!</p>
+                <p className="mt-5">This is your <Link href="https://inertiajs.com/" target="_blank" className="link link-primary">Laravel Intertia</Link> with React template!</p>
 
                 <p>Go to <span className="kbd kbd-sm p-1 text-white bg-primary mt-3">resources/js/Pages/Welcome.jsx</span> to start creating your app!</p>
 
