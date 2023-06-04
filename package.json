@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@inertiajs/react": "^1.0.3",
+        "@phosphor-icons/react": "^2.0.9",
         "@vitejs/plugin-react": "^3.1.0",
         "daisyui": "^2.51.5",
         "lodash": "^4.17.21",
