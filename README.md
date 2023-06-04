@@ -62,7 +62,7 @@ We would like to acknowledge the contributions of the Laravel, Inertia, React, a
 
 We welcome contributions to the Laravel Inertia React Starter! To contribute to the project, please follow these steps:
 
-- **Create a new branch:** Before making any changes, create a new branch with a descriptive name for your feature or bug fix. This helps to keep the main development branch, ```dev```, clean and allows for easier code review and collaboration.
+- **Create a new branch:** Before making any changes, create a new branch with a descriptive name for your feature or bug fix. We advise you to use something like this: ```bash mf/stock-management```, where "mf" are the initials of your name and "stock-management" the name of your feature. This helps to keep the main development branch, ```dev```, clean and allows for easier code review and collaboration.
 - **Make your changes:** Write the necessary code changes, add new features, or fix bugs in your branch. Ensure that your changes adhere to the project's coding standards and guidelines.
 - **Push your code:** Once you have made your changes and are ready to submit them, push your branch to the remote repository.
 - **Create a pull request:** Go to the project's repository on GitHub and navigate to the "Pull Requests" section. Click on the "New pull request" button, and select the dev branch as the base branch and your newly created branch as the compare branch. Give your pull request a descriptive title and provide a clear summary of the changes you have made. If your pull request resolves an open issue, reference it in the description. After reviewing your changes, one of the project maintainers will provide feedback or merge your pull request into the dev branch.
