@@ -42,6 +42,7 @@ class HandleInertiaRequests extends Middleware
                     'success' => $request->session()->get('success'),
                 ];
             },
+            'asset' => asset(''),
             'showingMobileMenu' => false,
             'logo' => asset('images/logo-min.png')
         ]);
