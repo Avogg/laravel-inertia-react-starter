@@ -7,7 +7,6 @@ use App\Http\Requests\Auth\StoreRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
 class AuthController extends Controller
@@ -25,7 +24,7 @@ class AuthController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
-        $data['password'] = Hash::make($data['password']);
+
         $user = User::create($data);
 
         auth()->login($user);

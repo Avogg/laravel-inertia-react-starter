@@ -18,23 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_admin')->default(false);
-            $table->boolean('is_doctor')->default(false);
-            $table->time('monday_starts_at')->nullable();
-            $table->time('monday_ends_at')->nullable();
-            $table->time('tuesday_starts_at')->nullable();
-            $table->time('tuesday_ends_at')->nullable();
-            $table->time('wednesday_starts_at')->nullable();
-            $table->time('wednesday_ends_at')->nullable();
-            $table->time('thursday_starts_at')->nullable();
-            $table->time('thursday_ends_at')->nullable();
-            $table->time('friday_starts_at')->nullable();
-            $table->time('friday_ends_at')->nullable();
-            $table->time('saturday_starts_at')->nullable();
-            $table->time('sturday_ends_at')->nullable();
-
             $table->rememberToken();
-
-
             $table->timestamps();
         });
     }

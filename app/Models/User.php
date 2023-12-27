@@ -3,14 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -23,8 +22,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
-        'is_admin',
-        'is_doctor',
+        'is_admin'
     ];
 
     /**
@@ -46,24 +44,13 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
     ];
 
-    public function areas()
+    public function setPasswordAttribute($value)
     {
-        return $this->belongsToMany(Area::class);
+        $this->attributes['password'] = Hash::make($value);
     }
-
 
     public function cart()
     {
         return $this->hasMany(Cart::class);
-    }
-
-    public function canAccessFilament(): bool
-    {
-        return true;
-    }
-
-    public function workingHours()
-    {
-        return $this->hasMany(WorkingHour::class);
     }
 }
